@@ -1,0 +1,8 @@
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\bin\Debug\StoreManagementSystem.exe.config
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\bin\Debug\StoreManagementSystem.exe
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\bin\Debug\StoreManagementSystem.pdb
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\obj\Debug\StoreManagementSystem.csproj.AssemblyReference.cache
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\obj\Debug\StoreManagementSystem.csproj.SuggestedBindingRedirects.cache
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\obj\Debug\StoreManagementSystem.csproj.CoreCompileInputs.cache
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\obj\Debug\StoreManagementSystem.exe
+F:\SWE4202_210042133\LAB08\StoreManagementSystem\StoreManagementSystem\obj\Debug\StoreManagementSystem.pdb
