@@ -21,8 +21,8 @@ namespace StoreManagementSystem
             get { return curLevel; }
             set
             {
-                if (curLevel >= 0) this.curLevel = value;
-                else Console.WriteLine($"Not enough amount of {this.Name}. Contact your Manager");
+                if (value >= 0) this.curLevel = value;
+                else Console.WriteLine($"Not enough amount of {this.Name}. Contact your Manager!");
             }
         }
 
@@ -37,9 +37,9 @@ namespace StoreManagementSystem
             
         }
 
-        public void Productinfo()
+        public void ShowProductInfo()
         {
-            Console.WriteLine($"ID :{this.Id} -- Product Name: {this.Name} -- Price: {this.Price} -- Qty: {this.Curlevel} -- Min.Qty {this.MinLevel} -- Req.Amt: {this.ReqAmount}");
+            Console.WriteLine($"ID : {this.Id} -- Product Name: {this.Name} -- Price: BDT {this.Price} -- Qty: {this.Curlevel} -- Min.Qty {this.MinLevel} -- Req.Amt: {this.ReqAmount}");
         }
 
     }

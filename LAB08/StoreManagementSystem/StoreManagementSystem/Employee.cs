@@ -20,14 +20,6 @@ namespace StoreManagementSystem
         }
 
         public abstract void ShowEmployeeInfo();
-        public abstract void SellProduct(int id, int amt, Store store);
-
-        public void AddProduct(int id, string name, double price, int curLev, int minLev, int reqAmt, Store store)
-        {
-            var product = new Product(id, name, price, curLev, minLev, reqAmt);
-            store.AddProduct(product);
-        }
-
         
     }
 }

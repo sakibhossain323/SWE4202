@@ -16,7 +16,7 @@ namespace StoreManagementSystem
 
         public SalesAssociate(string name, int age, double baseSalary): base(name, age, baseSalary)
         {
-            Console.WriteLine("---Manager has been added--");
+            Console.WriteLine("----Sales Associate has been added!----");
             this.ShowEmployeeInfo();
         }
 
@@ -25,7 +25,7 @@ namespace StoreManagementSystem
             Console.WriteLine($"Name: {this.Name} -- Age: {this.Age} -- BaseSalary: BDT {this.BaseSalary} -- Bonus: {this.Bonus} -- Total Salary: {this.TotalSalary}");
         }
 
-        public override void SellProduct(int id, int amt, Store store)
+        public void SellProduct(int id, int amt, Store store)
         {
             var p = store.FindProduct(id);
             
@@ -37,7 +37,7 @@ namespace StoreManagementSystem
                 double curBonus = (p.Price*amt) * 0.01;
                 this.Bonus += curBonus;
 
-                Console.WriteLine($"{p.Name} has been sold and {this.Name} has received a bonus of {curBonus}");
+                Console.WriteLine($"{p.Name} has been sold and {this.Name} has received a bonus of {curBonus}!");
             }
         }
     }
