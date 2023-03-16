@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AuthenticationSystem
 {
-    public partial class LoginForm : Form
+    public partial class SignUpForm : Form
     {
-        public LoginForm()
+        public SignUpForm()
         {
             InitializeComponent();
         }
