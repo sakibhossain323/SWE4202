@@ -38,25 +38,37 @@ namespace AuthenticationSystem
             return true;
         }
 
+        public static void ValidateName(string name)
+        {
+            if (name.Length < 1) throw new Exception("Name cannot be empty");
+            if (name.Contains(",")) throw new Exception("Name cannot contain comma(,)");
+        }
+
+        public static void ValidateUserName(string userName)
+        {
+            if (userName.Length < 6) throw new Exception("Username must contain at least 6 characters");
+            if (userName.Contains(",")) throw new Exception("Username cannot contain comma(,)");
+        }
+
+        public static void ValidatePassword(string pass, string repass)
+        {
+            if (pass.Length < 6) throw new Exception("Password must contain at least 6 characters");
+            if (pass.Contains(",")) throw new Exception("Password cannot contain comma(,)");
+            if (pass != repass) throw new Exception("Passwords dont match");
+            
+        }
+
         public static void ValidateCreds(string name, string uname, string pass, string repass)
         {
-
-            if (name.Length < 1) throw new Exception("Name cannot be empty");
-            if (uname.Length < 6) throw new Exception("Username must contain at least 6 characters");
-            if (pass.Length < 6) throw new Exception("Password must contain at least 6 characters");
-            if (pass != repass) throw new Exception("Passwords dont match");
-
-            if (name.Contains(",")) throw new Exception("Name cannot contain comma(,)");
-            if (uname.Contains(",")) throw new Exception("Username cannot contain comma(,)");
-            if (pass.Contains(",")) throw new Exception("Password cannot contain comma(,)");
-
-            IsDistinctUser(uname);
+            AuthHandler.ValidateName(name);
+            AuthHandler.ValidateUserName(uname);
+            AuthHandler.ValidatePassword(pass, repass);
+            AuthHandler.IsDistinctUser(uname);
         }
 
         public static void SignUp(string name, string uname, string pass, string repass)
         {
-            ValidateCreds(name, uname, pass, repass);
-
+            AuthHandler.ValidateCreds(name, uname, pass, repass);
             string data = uname + "," + pass + "," + name + "\n";
             FileHandler.WriteToFile(data);
         }
