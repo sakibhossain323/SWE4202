@@ -38,6 +38,7 @@
             this.LabelRePass = new System.Windows.Forms.Label();
             this.LabelLogin = new System.Windows.Forms.Label();
             this.ButtonSignUp = new System.Windows.Forms.Button();
+            this.LinkLabelLogin = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // LabelName
@@ -125,12 +126,25 @@
             this.ButtonSignUp.TabIndex = 9;
             this.ButtonSignUp.Text = "Sign Up";
             this.ButtonSignUp.UseVisualStyleBackColor = true;
+            this.ButtonSignUp.Click += new System.EventHandler(this.ButtonSignUp_Click);
+            // 
+            // LinkLabelLogin
+            // 
+            this.LinkLabelLogin.AutoSize = true;
+            this.LinkLabelLogin.Location = new System.Drawing.Point(231, 257);
+            this.LinkLabelLogin.Name = "LinkLabelLogin";
+            this.LinkLabelLogin.Size = new System.Drawing.Size(37, 13);
+            this.LinkLabelLogin.TabIndex = 10;
+            this.LinkLabelLogin.TabStop = true;
+            this.LinkLabelLogin.Text = "Log In";
+            this.LinkLabelLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelLogin_LinkClicked);
             // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 450);
+            this.Controls.Add(this.LinkLabelLogin);
             this.Controls.Add(this.ButtonSignUp);
             this.Controls.Add(this.LabelLogin);
             this.Controls.Add(this.TextBoxRePass);
@@ -160,5 +174,6 @@
         private System.Windows.Forms.Label LabelRePass;
         private System.Windows.Forms.Label LabelLogin;
         private System.Windows.Forms.Button ButtonSignUp;
+        private System.Windows.Forms.LinkLabel LinkLabelLogin;
     }
 }

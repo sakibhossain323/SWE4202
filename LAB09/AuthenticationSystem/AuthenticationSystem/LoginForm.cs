@@ -15,8 +15,6 @@ namespace AuthenticationSystem
         public LoginForm()
         {
             InitializeComponent();
-
-            foreach (var user in AuthHandler.Users) Console.WriteLine($"{user.UserName} {user.Password} {user.Name}");
         }
 
         private void ButtonLogin_Click(object sender, EventArgs e)
@@ -30,6 +28,13 @@ namespace AuthenticationSystem
                 this.Hide();
             }
             catch (Exception exc) { MessageBox.Show(exc.Message); }
+        }
+
+        private void LinkLabelSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var signUpPanel = new SignUpForm();
+            signUpPanel.Show();
+            this.Hide();
         }
     }
 }

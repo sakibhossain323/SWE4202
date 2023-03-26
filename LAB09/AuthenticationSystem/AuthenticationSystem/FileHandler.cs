@@ -43,9 +43,9 @@ namespace AuthenticationSystem
             return users;
         }
 
-        public static void WriteToFile()
+        public static void WriteToFile(string data)
         {
-
+            File.AppendAllText(FileHandler.Path, data);
         }
     }
 }
