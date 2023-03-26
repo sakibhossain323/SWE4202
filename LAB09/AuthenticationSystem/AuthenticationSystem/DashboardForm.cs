@@ -16,5 +16,20 @@ namespace AuthenticationSystem
         {
             InitializeComponent();
         }
+
+        public DashboardForm(User user)
+        {
+            InitializeComponent();
+
+            string greeting = this.LabelGreetUser.Text;
+            this.LabelGreetUser.Text = greeting.Replace("UserName", user.UserName);
+        }
+
+        private void ButtonLogOut_Click(object sender, EventArgs e)
+        {
+            var loginPanel = new LoginForm();
+            loginPanel.Show();
+            this.Hide();
+        }
     }
 }

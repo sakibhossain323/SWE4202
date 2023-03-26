@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace AuthenticationSystem
 {
-    internal class User
+    public class User
     {
         public string Name { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
 
-        public User(string name, string userName, string password)
+        public User(string userName, string password, string name)
         {
-            this.Name = name;
             this.UserName = userName;
             this.Password = password;
+            this.Name = name;
         }
     }
 }

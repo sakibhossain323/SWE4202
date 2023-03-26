@@ -15,7 +15,7 @@ namespace AuthenticationSystem
 
         
 
-        public static string[] ReadFromFile()
+        public static string[] ReadFile()
         {
 
             Console.WriteLine(FileHandler.Path);
@@ -23,11 +23,24 @@ namespace AuthenticationSystem
             if (File.Exists(FileHandler.Path))
             {
                 var lines = File.ReadAllLines(FileHandler.Path);
-                Console.WriteLine(lines);
                 return lines;
             }
             else throw new Exception("File Not Found");
             
+        }
+
+        public static List<User> GetUserData()
+        {
+            string[] lines = FileHandler.ReadFile();
+            var users = new List<User>();
+            foreach (string line in lines)
+            {
+                string[] data = line.Split(',');
+                if (data.Count() != 3) throw new Exception("Corrupted User Data");
+                var user = new User(data[0], data[1], data[2]);
+                users.Add(user);
+            }
+            return users;
         }
 
         public static void WriteToFile()
