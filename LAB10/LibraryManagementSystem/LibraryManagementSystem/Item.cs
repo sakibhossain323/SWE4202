@@ -14,9 +14,9 @@ namespace LibraryManagementSystem
         public string Category { get; set; }
         public bool IsAvailable { get; set; }
 
-        public Item(string iD, string title, string author, string category)
+        public Item(string id, string title, string author, string category)
         {
-            this.ID = iD;
+            this.ID = id;
             this.Title = title;
             this.Author = author;
             this.Category = category;
