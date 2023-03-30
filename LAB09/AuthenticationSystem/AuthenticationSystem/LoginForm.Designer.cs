@@ -34,6 +34,7 @@
             this.TextBoxPass = new System.Windows.Forms.TextBox();
             this.ButtonLogin = new System.Windows.Forms.Button();
             this.LabelSignUp = new System.Windows.Forms.Label();
+            this.LinkLabelSignUp = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // LabelUserName
@@ -78,6 +79,7 @@
             this.ButtonLogin.TabIndex = 4;
             this.ButtonLogin.Text = "Log In";
             this.ButtonLogin.UseVisualStyleBackColor = true;
+            this.ButtonLogin.Click += new System.EventHandler(this.ButtonLogin_Click);
             // 
             // LabelSignUp
             // 
@@ -88,11 +90,23 @@
             this.LabelSignUp.TabIndex = 5;
             this.LabelSignUp.Text = "Don\'t have an account? ";
             // 
+            // LinkLabelSignUp
+            // 
+            this.LinkLabelSignUp.AutoSize = true;
+            this.LinkLabelSignUp.Location = new System.Drawing.Point(217, 217);
+            this.LinkLabelSignUp.Name = "LinkLabelSignUp";
+            this.LinkLabelSignUp.Size = new System.Drawing.Size(61, 13);
+            this.LinkLabelSignUp.TabIndex = 6;
+            this.LinkLabelSignUp.TabStop = true;
+            this.LinkLabelSignUp.Text = "Create One";
+            this.LinkLabelSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelSignUp_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 450);
+            this.Controls.Add(this.LinkLabelSignUp);
             this.Controls.Add(this.LabelSignUp);
             this.Controls.Add(this.ButtonLogin);
             this.Controls.Add(this.TextBoxPass);
@@ -114,6 +128,7 @@
         private System.Windows.Forms.TextBox TextBoxPass;
         private System.Windows.Forms.Button ButtonLogin;
         private System.Windows.Forms.Label LabelSignUp;
+        private System.Windows.Forms.LinkLabel LinkLabelSignUp;
     }
 }
 
