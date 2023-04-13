@@ -48,6 +48,18 @@ namespace EmployeeManagement
 
             **/
 
+            // Handling Exception of above codes ==>
+
+            try { hrEmployee.ViewSalary(financeEmployee); }
+            catch(Exception e) { Console.WriteLine(e.Message); }
+
+            try { financeEmployee.ViewSalary(hrEmployee); }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+
+            try { marketingEmployee.PerformPerformanceReview(); }
+            catch (Exception e) { Console.WriteLine(e.Message); }
+
+
             // Print out some employee information
             Console.WriteLine(hrEmployee.GetEmployeeInformation());
             Console.WriteLine(financeEmployee.GetEmployeeInformation());
