@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BasicCalculator8digit
+namespace EightDigitCalculator
 {
-    public partial class Form1 : Form
+    public partial class CalculatorForm : Form
     {
         Calculator calc = new Calculator();
         private void DisplayResult()
@@ -25,7 +25,7 @@ namespace BasicCalculator8digit
             calc.SetCurOperand("Error: Press AC");
             DisplayResult();
         }
-        public Form1()
+        public CalculatorForm()
         {
             InitializeComponent();
             DisplayResult();

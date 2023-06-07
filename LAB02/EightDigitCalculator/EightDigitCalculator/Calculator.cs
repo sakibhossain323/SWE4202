@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BasicCalculator8digit
+namespace EightDigitCalculator
 {
     public class Calculator
     {
