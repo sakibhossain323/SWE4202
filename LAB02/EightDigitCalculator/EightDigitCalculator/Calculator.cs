@@ -14,24 +14,24 @@ namespace EightDigitCalculator
 
         public Calculator()
         {
-            this.Reset();
+            this.Reset(); // Initializes properties
         }
 
-        public void Reset()
+        public void Reset() // Resets Calculator to intial state
         {
             CurOperand = "0";
             PrevOperand = "";
             Operation = "";
         }
 
-        private bool IsAppendable()
+        private bool IsAppendable() // Checks if a new digit can be appended
         {
-            bool isNeg = CurOperand.StartsWith("-");
-            bool isfrac = CurOperand.Contains(".");
+            bool isNeg = CurOperand.StartsWith("-"); // Checks if a negative number
+            bool isfrac = CurOperand.Contains("."); // Checks if fractional number
 
-            if (isNeg && isfrac && CurOperand.Length < 10) return true;
-            else if (isNeg && CurOperand.Length < 9) return true;
-            else if (isfrac && CurOperand.Length < 9) return true;
+            if (isNeg && isfrac && CurOperand.Length < 10) return true; // Less than 8 digit including - and . symbol
+            else if (isNeg && CurOperand.Length < 9) return true; // Less than 8 digit including - symbol
+            else if (isfrac && CurOperand.Length < 9) return true; //Less than 8 digit including . symbol
             else if (CurOperand.Length < 8) return true;
 
             return false;
@@ -39,28 +39,28 @@ namespace EightDigitCalculator
 
         public void AppendDigit(string digit)
         {
-            if (!IsAppendable()) return;
+            if (!IsAppendable()) return; // Already 8 digit
 
-            if (CurOperand == "0") CurOperand = "";
+            if (CurOperand == "0") CurOperand = ""; // Avoids Leading Zeroes
             CurOperand += digit;
         }
 
-        public void AppendDecPoint()
+        public void AppendDecPoint() // Appends Decimal Point
         {
-            if (CurOperand.Contains(".")) return;
-            if (!IsAppendable()) return;
+            if (CurOperand.Contains(".")) return; // Prevents multiple decimal point symbols
+            if (!IsAppendable()) return; // Prevents appending if 8 digits already exists
 
-            if (CurOperand == "") CurOperand = "0";
+            if (CurOperand == "") CurOperand = "0"; // Puts Leading zero before decimal point
             CurOperand += ".";
         }
 
         public void Negate()
         {
-            if (CurOperand == "" || CurOperand == "0") return;
+            if (CurOperand == "" || CurOperand == "0") return; // Prevents Negating empty or zero value
 
             if (CurOperand.StartsWith("-"))
             {
-                CurOperand = CurOperand.TrimStart('-');
+                CurOperand = CurOperand.TrimStart('-'); // Makes a negative number positive
             }
             else CurOperand = "-" + CurOperand;
         }
@@ -74,24 +74,22 @@ namespace EightDigitCalculator
             CurOperand = Convert.ToString(num);
         }
 
-        private string ValidateResult(double result)
+        private string ValidateResult(double result) // Prevents Invalid Results
         {
-            string resultString;
-            if (double.IsNaN(result) || double.IsInfinity(result)) throw new Exception(); 
+            if (double.IsNaN(result) || double.IsInfinity(result)) throw new Exception();
+            
             string num = Convert.ToString(Math.Abs(result));
+            string whole = num.Split('.')[0]; // takes integer portion of the number
+            if (whole.Length > 8) throw new Exception(); // Prevents Exceeding 8 digit limit
+            if (num.Contains(".")) result = Math.Round(result, 8 - whole.Length); // Rounds up floating point values to 8 digits
 
-            string whole = num.Split('.')[0];
-            if (whole.Length > 8) throw new Exception();
-
-            if (num.Contains(".")) result = Math.Round(result, 8 - whole.Length);
-            resultString = Convert.ToString(result);
-
+            string resultString = Convert.ToString(result);
             return resultString;
         }
 
-        public void PerformCalculation()
+        private void PerformCalculation()
         {
-            if (Operation == "") return;
+            if (PrevOperand == "" || Operation == "") return; // Prevents invalid operation
 
             double num1 = Convert.ToDouble(PrevOperand);
             double num2 = Convert.ToDouble(CurOperand);
@@ -105,21 +103,15 @@ namespace EightDigitCalculator
             CurOperand = ValidateResult(result);
         }
 
-        public void PerformPendingCalculation()
-        {
-            if (PrevOperand == "") return;
-            PerformCalculation();
-        }
-
         public void PerformOperation(string opreator)
         {
-            if(CurOperand == "")
+            if(CurOperand == "") // Prevents invalid operation
             {
                 Operation = opreator;
                 return;
             }
 
-            PerformPendingCalculation();
+            PerformCalculation(); // Performs previous pending operations
             PrevOperand = CurOperand;
             CurOperand = "";
             Operation = opreator;
@@ -132,7 +124,7 @@ namespace EightDigitCalculator
             if(CurOperand == "") result = PrevOperand;
             else 
             {
-                PerformPendingCalculation();
+                PerformCalculation();
                 result = CurOperand;
             }
 
@@ -141,6 +133,5 @@ namespace EightDigitCalculator
         }
     
     }
-
 
 }

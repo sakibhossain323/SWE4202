@@ -12,21 +12,21 @@ namespace EightDigitCalculator
 {
     public partial class CalculatorForm : Form
     {
-        Calculator calc = new Calculator();
+        readonly Calculator calc = new Calculator(); // Instantiating Calculator Object
         
         public CalculatorForm()
         {
             InitializeComponent();
-            DisplayResult();
+            DisplayResult(); // Displaying Initial state of Calculator
         }
 
-        private void DisplayResult()
+        private void DisplayResult() // Updates results on UI
         {
             LabelResult.Text = calc.CurOperand;
             LabelPrevResult.Text = calc.PrevOperand + " " + calc.Operation;
         }
 
-        private void EnableButtons()
+        private void EnableButtons() // Enables all buttons
         {
             foreach (Control control in this.Controls)
             {
@@ -34,17 +34,17 @@ namespace EightDigitCalculator
             }
         }
 
-        private void DisableButtons()
+        private void DisableButtons() // Disables all buttons except AC button
         {
             foreach (Control control in this.Controls)
             {
                 if (control is Button button) button.Enabled = false;
             }
 
-            ButtonAC.Enabled = true;
+            ButtonAC.Enabled = true; 
         }
 
-        private void ShowError()
+        private void DisplayError() // Show Error Message
         {
             calc.Reset();
             DisplayResult();
@@ -55,8 +55,8 @@ namespace EightDigitCalculator
         private void ButtonAC_Click(object sender, EventArgs e)
         {
             calc.Reset();
-            EnableButtons();
             DisplayResult();
+            EnableButtons();
         }
 
         
@@ -140,30 +140,12 @@ namespace EightDigitCalculator
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            //if (calc.CurOperand == "")
-            //{
-            //    calc.Operation = "+";
-            //    DisplayResult();
-            //    return;
-            //}
-
-            //if(calc.PrevOperand != "") calc.PerformCalculation();
-
-
             try
             {
                 calc.PerformOperation("+");
                 DisplayResult();
             }
-            catch (Exception) { ShowError(); }
-
-            
-            //if (curOp.Contains("Error"))
-            //{
-            //    RaiseError();
-            //    return;
-            //}
-            
+            catch (Exception) { DisplayError(); }
         }
 
         private void ButtonSubstract_Click(object sender, EventArgs e)
@@ -173,26 +155,7 @@ namespace EightDigitCalculator
                 calc.PerformOperation("-");
                 DisplayResult();
             }
-            catch (Exception) { ShowError(); }
-            //if (calc.CurOperand == "")
-            //{
-            //    calc.Operation = "-";
-            //    DisplayResult();
-            //    return;
-            //}
-
-            //if (calc.PrevOperand != "") calc.PerformCalculation();
-            //string curOp = calc.CurOperand;
-            //if (curOp.Contains("Error"))
-            //{
-            //    RaiseError();
-            //    return;
-            //}
-            //calc.PrevOperand = curOp;
-            //calc.CurOperand = "";
-            //calc.Operation = "-";
-
-            //DisplayResult();
+            catch (Exception) { DisplayError(); }
         }
 
         private void ButtonMultiply_Click(object sender, EventArgs e)
@@ -202,26 +165,7 @@ namespace EightDigitCalculator
                 calc.PerformOperation("*");
                 DisplayResult();
             }
-            catch (Exception) { ShowError(); }
-            //if (calc.CurOperand == "")
-            //{
-            //    calc.Operation = "*";
-            //    DisplayResult();
-            //    return;
-            //}
-
-            //if (calc.PrevOperand != "") calc.PerformCalculation();
-            //string curOp = calc.CurOperand;
-            //if (curOp.Contains("Error"))
-            //{
-            //    RaiseError();
-            //    return;
-            //}
-            //calc.PrevOperand = curOp;
-            //calc.CurOperand = "";
-            //calc.Operation = "*";
-
-            //DisplayResult();
+            catch (Exception) { DisplayError(); }
         }
 
         private void ButtonDivide_Click(object sender, EventArgs e)
@@ -231,55 +175,17 @@ namespace EightDigitCalculator
                 calc.PerformOperation("/");
                 DisplayResult();
             }
-            catch (Exception) { ShowError(); }
-            //if (calc.CurOperand == "")
-            //{
-            //    calc.Operation = "/";
-            //    DisplayResult();
-            //    return;
-            //}
-
-            //if (calc.PrevOperand != "") calc.PerformCalculation();
-            //string curOp = calc.CurOperand;
-            //if (curOp.Contains("Error"))
-            //{
-            //    RaiseError();
-            //    return;
-            //}
-            //calc.PrevOperand = curOp;
-            //calc.CurOperand = "";
-            //calc.Operation = "/";
-
-            //DisplayResult();
+            catch (Exception) { DisplayError(); }
         }
 
         private void ButtonEqual_Click(object sender, EventArgs e)
         {
-            //if (calc.CurOperand == "")
-            //{
-            //    string prevOp = calc.PrevOperand;
-            //    calc.Reset();
-            //    calc.CurOperand = prevOp;
-            //    DisplayResult();
-            //    return;
-            //}
-
-            //if (calc.PrevOperand != "") calc.PerformCalculation();
-            //string curOp = calc.CurOperand;
-            //if (curOp.Contains("Error"))
-            //{
-            //    RaiseError();
-            //    return;
-            //}
-            //calc.Reset();
-            //calc.CurOperand = curOp;
-            
             try
             {
                 calc.FinalizeCalculation();
                 DisplayResult();
             }
-            catch (Exception) { ShowError(); }
+            catch (Exception) { DisplayError(); }
         }
 
     }
