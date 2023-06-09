@@ -74,7 +74,7 @@ namespace EightDigitCalculator
             this.ButtonAC.TabIndex = 1;
             this.ButtonAC.Text = "AC";
             this.ButtonAC.UseVisualStyleBackColor = true;
-            this.ButtonAC.Click += new System.EventHandler(this.acButton_Click);
+            this.ButtonAC.Click += new System.EventHandler(this.ButtonAC_Click);
             // 
             // ButtonNegate
             // 
@@ -85,7 +85,7 @@ namespace EightDigitCalculator
             this.ButtonNegate.TabIndex = 2;
             this.ButtonNegate.Text = "+/-";
             this.ButtonNegate.UseVisualStyleBackColor = true;
-            this.ButtonNegate.Click += new System.EventHandler(this.negateButton_Click);
+            this.ButtonNegate.Click += new System.EventHandler(this.ButtonNegate_Click);
             // 
             // ButtonPercent
             // 
@@ -96,7 +96,7 @@ namespace EightDigitCalculator
             this.ButtonPercent.TabIndex = 3;
             this.ButtonPercent.Text = "%";
             this.ButtonPercent.UseVisualStyleBackColor = true;
-            this.ButtonPercent.Click += new System.EventHandler(this.percentButton_Click);
+            this.ButtonPercent.Click += new System.EventHandler(this.ButtonPercent_Click);
             // 
             // ButtonDivide
             // 
@@ -107,7 +107,7 @@ namespace EightDigitCalculator
             this.ButtonDivide.TabIndex = 4;
             this.ButtonDivide.Text = "/";
             this.ButtonDivide.UseVisualStyleBackColor = true;
-            this.ButtonDivide.Click += new System.EventHandler(this.divideButton_Click);
+            this.ButtonDivide.Click += new System.EventHandler(this.ButtonDivide_Click);
             // 
             // ButtonMultiply
             // 
@@ -118,7 +118,7 @@ namespace EightDigitCalculator
             this.ButtonMultiply.TabIndex = 8;
             this.ButtonMultiply.Text = "x";
             this.ButtonMultiply.UseVisualStyleBackColor = true;
-            this.ButtonMultiply.Click += new System.EventHandler(this.multiplyButton_Click);
+            this.ButtonMultiply.Click += new System.EventHandler(this.ButtonMultiply_Click);
             // 
             // ButtonDig9
             // 
@@ -129,7 +129,7 @@ namespace EightDigitCalculator
             this.ButtonDig9.TabIndex = 7;
             this.ButtonDig9.Text = "9";
             this.ButtonDig9.UseVisualStyleBackColor = true;
-            this.ButtonDig9.Click += new System.EventHandler(this.dig9Button_Click);
+            this.ButtonDig9.Click += new System.EventHandler(this.ButtonDig9_Click);
             // 
             // ButtonDig8
             // 
@@ -140,7 +140,7 @@ namespace EightDigitCalculator
             this.ButtonDig8.TabIndex = 6;
             this.ButtonDig8.Text = "8";
             this.ButtonDig8.UseVisualStyleBackColor = true;
-            this.ButtonDig8.Click += new System.EventHandler(this.dig8Button_Click);
+            this.ButtonDig8.Click += new System.EventHandler(this.ButtonDig8_Click);
             // 
             // ButtonDig7
             // 
@@ -151,7 +151,7 @@ namespace EightDigitCalculator
             this.ButtonDig7.TabIndex = 5;
             this.ButtonDig7.Text = "7";
             this.ButtonDig7.UseVisualStyleBackColor = true;
-            this.ButtonDig7.Click += new System.EventHandler(this.dig7Button_Click);
+            this.ButtonDig7.Click += new System.EventHandler(this.ButtonDig7_Click);
             // 
             // ButtonSubstract
             // 
@@ -162,7 +162,7 @@ namespace EightDigitCalculator
             this.ButtonSubstract.TabIndex = 12;
             this.ButtonSubstract.Text = "-";
             this.ButtonSubstract.UseVisualStyleBackColor = true;
-            this.ButtonSubstract.Click += new System.EventHandler(this.minusButton_Click);
+            this.ButtonSubstract.Click += new System.EventHandler(this.ButtonSubstract_Click);
             // 
             // ButtonDig6
             // 
@@ -173,7 +173,7 @@ namespace EightDigitCalculator
             this.ButtonDig6.TabIndex = 11;
             this.ButtonDig6.Text = "6";
             this.ButtonDig6.UseVisualStyleBackColor = true;
-            this.ButtonDig6.Click += new System.EventHandler(this.dig6Button_Click);
+            this.ButtonDig6.Click += new System.EventHandler(this.ButtonDig6_Click);
             // 
             // ButtonDig5
             // 
@@ -184,7 +184,7 @@ namespace EightDigitCalculator
             this.ButtonDig5.TabIndex = 10;
             this.ButtonDig5.Text = "5";
             this.ButtonDig5.UseVisualStyleBackColor = true;
-            this.ButtonDig5.Click += new System.EventHandler(this.dig5Button_Click);
+            this.ButtonDig5.Click += new System.EventHandler(this.ButtonDig5_Click);
             // 
             // ButtonDig4
             // 
@@ -195,7 +195,7 @@ namespace EightDigitCalculator
             this.ButtonDig4.TabIndex = 9;
             this.ButtonDig4.Text = "4";
             this.ButtonDig4.UseVisualStyleBackColor = true;
-            this.ButtonDig4.Click += new System.EventHandler(this.dig4Button_Click);
+            this.ButtonDig4.Click += new System.EventHandler(this.ButtonDig4_Click);
             // 
             // ButtonAdd
             // 
@@ -206,7 +206,7 @@ namespace EightDigitCalculator
             this.ButtonAdd.TabIndex = 16;
             this.ButtonAdd.Text = "+";
             this.ButtonAdd.UseVisualStyleBackColor = true;
-            this.ButtonAdd.Click += new System.EventHandler(this.addButton_Click);
+            this.ButtonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // ButtonDig3
             // 
@@ -217,7 +217,7 @@ namespace EightDigitCalculator
             this.ButtonDig3.TabIndex = 15;
             this.ButtonDig3.Text = "3";
             this.ButtonDig3.UseVisualStyleBackColor = true;
-            this.ButtonDig3.Click += new System.EventHandler(this.dig3Button_Click);
+            this.ButtonDig3.Click += new System.EventHandler(this.ButtonDig3_Click);
             // 
             // ButtonDig2
             // 
@@ -228,7 +228,7 @@ namespace EightDigitCalculator
             this.ButtonDig2.TabIndex = 14;
             this.ButtonDig2.Text = "2";
             this.ButtonDig2.UseVisualStyleBackColor = true;
-            this.ButtonDig2.Click += new System.EventHandler(this.dig2Button_Click);
+            this.ButtonDig2.Click += new System.EventHandler(this.ButtonDig2_Click);
             // 
             // ButtonDig1
             // 
@@ -239,7 +239,7 @@ namespace EightDigitCalculator
             this.ButtonDig1.TabIndex = 13;
             this.ButtonDig1.Text = "1";
             this.ButtonDig1.UseVisualStyleBackColor = true;
-            this.ButtonDig1.Click += new System.EventHandler(this.dig1Button_Click);
+            this.ButtonDig1.Click += new System.EventHandler(this.ButtonDig1_Click);
             // 
             // ButtonEqual
             // 
@@ -250,7 +250,7 @@ namespace EightDigitCalculator
             this.ButtonEqual.TabIndex = 20;
             this.ButtonEqual.Text = "=";
             this.ButtonEqual.UseVisualStyleBackColor = true;
-            this.ButtonEqual.Click += new System.EventHandler(this.equalButton_Click);
+            this.ButtonEqual.Click += new System.EventHandler(this.ButtonEqual_Click);
             // 
             // ButtonDecPoint
             // 
@@ -261,7 +261,7 @@ namespace EightDigitCalculator
             this.ButtonDecPoint.TabIndex = 19;
             this.ButtonDecPoint.Text = ".";
             this.ButtonDecPoint.UseVisualStyleBackColor = true;
-            this.ButtonDecPoint.Click += new System.EventHandler(this.pointButton_Click);
+            this.ButtonDecPoint.Click += new System.EventHandler(this.ButtonDecPoint_Click);
             // 
             // ButtonDig0
             // 
@@ -272,7 +272,7 @@ namespace EightDigitCalculator
             this.ButtonDig0.TabIndex = 18;
             this.ButtonDig0.Text = "0";
             this.ButtonDig0.UseVisualStyleBackColor = true;
-            this.ButtonDig0.Click += new System.EventHandler(this.dig0Button_Click);
+            this.ButtonDig0.Click += new System.EventHandler(this.ButtonDig0_Click);
             // 
             // LabelPrevResult
             // 

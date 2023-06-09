@@ -31,87 +31,87 @@ namespace EightDigitCalculator
             DisplayResult();
         }
 
-        private void acButton_Click(object sender, EventArgs e)
+        private void ButtonAC_Click(object sender, EventArgs e)
         {
             calc.Reset();
             DisplayResult();
         }
 
         
-        private void dig0Button_Click(object sender, EventArgs e)
+        private void ButtonDig0_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("0");
             DisplayResult();
         }
 
-        private void dig1Button_Click(object sender, EventArgs e)
+        private void ButtonDig1_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("1");
             DisplayResult();
         }
 
-        private void dig2Button_Click(object sender, EventArgs e)
+        private void ButtonDig2_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("2");
             DisplayResult();
         }
 
-        private void dig3Button_Click(object sender, EventArgs e)
+        private void ButtonDig3_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("3");
             DisplayResult();
         }
 
-        private void dig4Button_Click(object sender, EventArgs e)
+        private void ButtonDig4_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("4");
             DisplayResult();
         }
 
-        private void dig5Button_Click(object sender, EventArgs e)
+        private void ButtonDig5_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("5");
             DisplayResult();
         }
 
-        private void dig6Button_Click(object sender, EventArgs e)
+        private void ButtonDig6_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("6");
             DisplayResult();
         }
 
-        private void dig7Button_Click(object sender, EventArgs e)
+        private void ButtonDig7_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("7");
             DisplayResult();
         }
 
-        private void dig8Button_Click(object sender, EventArgs e)
+        private void ButtonDig8_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("8");
             DisplayResult();
         }
 
-        private void dig9Button_Click(object sender, EventArgs e)
+        private void ButtonDig9_Click(object sender, EventArgs e)
         {
             calc.AppendDigit("9");
             DisplayResult();
         }
 
-        private void pointButton_Click(object sender, EventArgs e)
+        private void ButtonDecPoint_Click(object sender, EventArgs e)
         {
             calc.AppendDigit(".");
             DisplayResult();
         }
 
-        private void negateButton_Click(object sender, EventArgs e)
+        private void ButtonNegate_Click(object sender, EventArgs e)
         {
             calc.Negate();
             DisplayResult();
         }
 
         
-        private void addButton_Click(object sender, EventArgs e)
+        private void ButtonAdd_Click(object sender, EventArgs e)
         {
             if (calc.GetCurOperand() == "")
             {
@@ -134,7 +134,7 @@ namespace EightDigitCalculator
             DisplayResult();
         }
 
-        private void minusButton_Click(object sender, EventArgs e)
+        private void ButtonSubstract_Click(object sender, EventArgs e)
         {
             if (calc.GetCurOperand() == "")
             {
@@ -157,7 +157,7 @@ namespace EightDigitCalculator
             DisplayResult();
         }
 
-        private void multiplyButton_Click(object sender, EventArgs e)
+        private void ButtonMultiply_Click(object sender, EventArgs e)
         {
             if (calc.GetCurOperand() == "")
             {
@@ -180,7 +180,7 @@ namespace EightDigitCalculator
             DisplayResult();
         }
 
-        private void divideButton_Click(object sender, EventArgs e)
+        private void ButtonDivide_Click(object sender, EventArgs e)
         {
             if (calc.GetCurOperand() == "")
             {
@@ -203,13 +203,13 @@ namespace EightDigitCalculator
             DisplayResult();
         }
 
-        private void percentButton_Click(object sender, EventArgs e)
+        private void ButtonPercent_Click(object sender, EventArgs e)
         {
             calc.percent();
             DisplayResult();
         }
 
-        private void equalButton_Click(object sender, EventArgs e)
+        private void ButtonEqual_Click(object sender, EventArgs e)
         {
             if (calc.GetCurOperand() == "")
             {

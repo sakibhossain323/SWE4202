@@ -4,12 +4,14 @@ namespace EightDigitCalculator
 {
     public class Calculator
     {
+        public string CurOperand { get; set; }
+        public string PrevOperand { get; set; }
+        public string Operation { get; set;  }
         private string curOperand, prevOperand, operation;
+
         public Calculator()
         {
-            curOperand = "0";
-            prevOperand = "";
-            operation = "";
+            this.Reset();
         }
 
         public void Reset()
