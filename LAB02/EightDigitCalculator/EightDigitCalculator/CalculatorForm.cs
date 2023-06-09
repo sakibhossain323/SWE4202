@@ -15,8 +15,8 @@ namespace EightDigitCalculator
         Calculator calc = new Calculator();
         private void DisplayResult()
         {
-            resultLabel.Text = calc.GetCurOperand();
-            prevResultLabel.Text = calc.GetPrevOperand() + " " + calc.GetOperation();
+            LabelResult.Text = calc.GetCurOperand();
+            LabelPrevResult.Text = calc.GetPrevOperand() + " " + calc.GetOperation();
         }
 
         private void RaiseError()
