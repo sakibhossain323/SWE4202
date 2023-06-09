@@ -6,8 +6,7 @@ namespace EightDigitCalculator
     {
         public string CurOperand { get; set; }
         public string PrevOperand { get; set; }
-        public string Operation { get; set;  }
-        private string curOperand, prevOperand, operation;
+        public string Operation { get; set; }
 
         public Calculator()
         {
@@ -16,62 +15,31 @@ namespace EightDigitCalculator
 
         public void Reset()
         {
-            curOperand = "0";
-            prevOperand = "";
-            operation = "";
-        }
-
-        public string GetCurOperand()
-        {
-            return curOperand;
-        }
-
-        public string GetPrevOperand()
-        {
-            return prevOperand;
-        }
-
-        public string GetOperation()
-        {
-            return operation;
-        }
-
-        public void SetCurOperand(string operand)
-        {
-            curOperand = operand;
-        }
-
-        public void SetPrevOperand(string operand)
-        {
-            double num = Convert.ToDouble(operand);
-            prevOperand = Convert.ToString(num);
-        }
-
-        public void SetOperation(string operationSymbol)
-        {
-            operation = operationSymbol;
+            this.CurOperand = "0";
+            this.PrevOperand = "";
+            this.Operation = "";
         }
 
         private bool FitDigitlimit()
         {
-            if (curOperand.StartsWith("-"))
+            if (CurOperand.StartsWith("-"))
             {
-                if (curOperand.Contains(".") && curOperand.Length < 10) return true;
-                else if (curOperand.Length < 9) return true;
+                if (CurOperand.Contains(".") && CurOperand.Length < 10) return true;
+                else if (CurOperand.Length < 9) return true;
                 return false;
             }
             else
             {
-                if (curOperand.Contains(".") && curOperand.Length < 9) return true;
-                else if (curOperand.Length < 8) return true;
+                if (CurOperand.Contains(".") && CurOperand.Length < 9) return true;
+                else if (CurOperand.Length < 8) return true;
                 return false;
             }
         }
 
         private bool Appendable(string digit)
         {
-            if (digit == "0" && curOperand == "0") return false;
-            else if (digit == "." && curOperand.Contains(".")) return false;
+            if (digit == "0" && CurOperand == "0") return false;
+            else if (digit == "." && CurOperand.Contains(".")) return false;
 
             return FitDigitlimit();
         }
@@ -79,21 +47,21 @@ namespace EightDigitCalculator
         {
             if (!Appendable(digit)) return;
 
-            if (digit == "." && curOperand == "") curOperand = "0";
-            else if (digit != "." && curOperand == "0") curOperand = "";
+            if (digit == "." && CurOperand == "") CurOperand = "0";
+            else if (digit != "." && CurOperand == "0") CurOperand = "";
 
-            curOperand += digit;
+            CurOperand += digit;
         }
 
         public void Negate()
         {
-            if (curOperand.Contains("Error")) return;
-            else if (curOperand == "0" || curOperand == "") return;
-            else if (curOperand.StartsWith("-"))
+            if (CurOperand.Contains("Error")) return;
+            else if (CurOperand == "0" || CurOperand == "") return;
+            else if (CurOperand.StartsWith("-"))
             {
-                curOperand = curOperand.TrimStart('-');
+                CurOperand = CurOperand.TrimStart('-');
             }
-            else curOperand = "-" + curOperand;
+            else CurOperand = "-" + CurOperand;
         }
 
         private string ValidateResult(double result)
@@ -113,28 +81,28 @@ namespace EightDigitCalculator
 
         public void PerformCalculation()
         {
-            if (operation == "") return;
+            if (Operation == "") return;
 
-            double num1 = Convert.ToDouble(prevOperand);
-            double num2 = Convert.ToDouble(curOperand);
+            double num1 = Convert.ToDouble(PrevOperand);
+            double num2 = Convert.ToDouble(CurOperand);
             double result = 0;
             
-            if (operation == "+") result = num1 + num2;
-            else if (operation == "-") result = num1 - num2;
-            else if (operation == "*") result = num1 * num2;
-            else if (operation == "/") result = num1 / num2;
+            if (Operation == "+") result = num1 + num2;
+            else if (Operation == "-") result = num1 - num2;
+            else if (Operation == "*") result = num1 * num2;
+            else if (Operation == "/") result = num1 / num2;
 
-            curOperand = ValidateResult(result);
+            CurOperand = ValidateResult(result);
         }
 
         public void percent()
         {
-            if (curOperand.Contains("Error")) return;
-            else if (curOperand == "") return;
+            if (CurOperand.Contains("Error")) return;
+            else if (CurOperand == "") return;
             {
-                double num = Convert.ToDouble(curOperand);
+                double num = Convert.ToDouble(CurOperand);
                 num /= 100.0;
-                curOperand = Convert.ToString(num);
+                CurOperand = Convert.ToString(num);
             }
         }
     }

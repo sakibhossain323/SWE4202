@@ -15,14 +15,14 @@ namespace EightDigitCalculator
         Calculator calc = new Calculator();
         private void DisplayResult()
         {
-            LabelResult.Text = calc.GetCurOperand();
-            LabelPrevResult.Text = calc.GetPrevOperand() + " " + calc.GetOperation();
+            LabelResult.Text = calc.CurOperand;
+            LabelPrevResult.Text = calc.PrevOperand + " " + calc.Operation;
         }
 
         private void RaiseError()
         {
             calc.Reset();
-            calc.SetCurOperand("Error: Press AC");
+            calc.CurOperand = "Error: Press AC";
             DisplayResult();
         }
         public CalculatorForm()
@@ -113,92 +113,92 @@ namespace EightDigitCalculator
         
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            if (calc.GetCurOperand() == "")
+            if (calc.CurOperand == "")
             {
-                calc.SetOperation("+");
+                calc.Operation = "+";
                 DisplayResult();
                 return;
             }
 
-            if(calc.GetPrevOperand() != "") calc.PerformCalculation();
-            string curOp = calc.GetCurOperand();
+            if(calc.PrevOperand != "") calc.PerformCalculation();
+            string curOp = calc.CurOperand;
             if (curOp.Contains("Error"))
             {
                 RaiseError();
                 return;
             }
-            calc.SetPrevOperand(curOp);
-            calc.SetCurOperand("");
-            calc.SetOperation("+");
+            calc.PrevOperand = curOp;
+            calc.CurOperand = "";
+            calc.Operation = "+";
 
             DisplayResult();
         }
 
         private void ButtonSubstract_Click(object sender, EventArgs e)
         {
-            if (calc.GetCurOperand() == "")
+            if (calc.CurOperand == "")
             {
-                calc.SetOperation("-");
+                calc.Operation = "-";
                 DisplayResult();
                 return;
             }
 
-            if (calc.GetPrevOperand() != "") calc.PerformCalculation();
-            string curOp = calc.GetCurOperand();
+            if (calc.PrevOperand != "") calc.PerformCalculation();
+            string curOp = calc.CurOperand;
             if (curOp.Contains("Error"))
             {
                 RaiseError();
                 return;
             }
-            calc.SetPrevOperand(curOp);
-            calc.SetCurOperand("");
-            calc.SetOperation("-");
+            calc.PrevOperand = curOp;
+            calc.CurOperand = "";
+            calc.Operation = "-";
 
             DisplayResult();
         }
 
         private void ButtonMultiply_Click(object sender, EventArgs e)
         {
-            if (calc.GetCurOperand() == "")
+            if (calc.CurOperand == "")
             {
-                calc.SetOperation("*");
+                calc.Operation = "*";
                 DisplayResult();
                 return;
             }
 
-            if (calc.GetPrevOperand() != "") calc.PerformCalculation();
-            string curOp = calc.GetCurOperand();
+            if (calc.PrevOperand != "") calc.PerformCalculation();
+            string curOp = calc.CurOperand;
             if (curOp.Contains("Error"))
             {
                 RaiseError();
                 return;
             }
-            calc.SetPrevOperand(curOp);
-            calc.SetCurOperand("");
-            calc.SetOperation("*");
+            calc.PrevOperand = curOp;
+            calc.CurOperand = "";
+            calc.Operation = "*";
 
             DisplayResult();
         }
 
         private void ButtonDivide_Click(object sender, EventArgs e)
         {
-            if (calc.GetCurOperand() == "")
+            if (calc.CurOperand == "")
             {
-                calc.SetOperation("/");
+                calc.Operation = "/";
                 DisplayResult();
                 return;
             }
 
-            if (calc.GetPrevOperand() != "") calc.PerformCalculation();
-            string curOp = calc.GetCurOperand();
+            if (calc.PrevOperand != "") calc.PerformCalculation();
+            string curOp = calc.CurOperand;
             if (curOp.Contains("Error"))
             {
                 RaiseError();
                 return;
             }
-            calc.SetPrevOperand(curOp);
-            calc.SetCurOperand("");
-            calc.SetOperation("/");
+            calc.PrevOperand = curOp;
+            calc.CurOperand = "";
+            calc.Operation = "/";
 
             DisplayResult();
         }
@@ -211,24 +211,24 @@ namespace EightDigitCalculator
 
         private void ButtonEqual_Click(object sender, EventArgs e)
         {
-            if (calc.GetCurOperand() == "")
+            if (calc.CurOperand == "")
             {
-                string prevOp = calc.GetPrevOperand();
+                string prevOp = calc.PrevOperand;
                 calc.Reset();
-                calc.SetCurOperand(prevOp);
+                calc.CurOperand = prevOp;
                 DisplayResult();
                 return;
             }
 
-            if (calc.GetPrevOperand() != "") calc.PerformCalculation();
-            string curOp = calc.GetCurOperand();
+            if (calc.PrevOperand != "") calc.PerformCalculation();
+            string curOp = calc.CurOperand;
             if (curOp.Contains("Error"))
             {
                 RaiseError();
                 return;
             }
             calc.Reset();
-            calc.SetCurOperand(curOp);
+            calc.CurOperand = curOp;
 
             DisplayResult();
         }
