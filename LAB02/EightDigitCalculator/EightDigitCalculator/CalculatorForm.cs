@@ -44,11 +44,11 @@ namespace EightDigitCalculator
             ButtonAC.Enabled = true;
         }
 
-        private void RaiseError()
+        private void ShowError()
         {
             calc.Reset();
-            calc.CurOperand = "Error: Press AC";
             DisplayResult();
+            LabelResult.Text = "Error: Press AC";
             DisableButtons();
         }
 
@@ -140,118 +140,146 @@ namespace EightDigitCalculator
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            if (calc.CurOperand == "")
+            //if (calc.CurOperand == "")
+            //{
+            //    calc.Operation = "+";
+            //    DisplayResult();
+            //    return;
+            //}
+
+            //if(calc.PrevOperand != "") calc.PerformCalculation();
+
+
+            try
             {
-                calc.Operation = "+";
+                calc.PerformOperation("+");
                 DisplayResult();
-                return;
             }
+            catch (Exception) { ShowError(); }
 
-            if(calc.PrevOperand != "") calc.PerformCalculation();
-            string curOp = calc.CurOperand;
-            if (curOp.Contains("Error"))
-            {
-                RaiseError();
-                return;
-            }
-            calc.PrevOperand = curOp;
-            calc.CurOperand = "";
-            calc.Operation = "+";
-
-            DisplayResult();
+            
+            //if (curOp.Contains("Error"))
+            //{
+            //    RaiseError();
+            //    return;
+            //}
+            
         }
 
         private void ButtonSubstract_Click(object sender, EventArgs e)
         {
-            if (calc.CurOperand == "")
+            try
             {
-                calc.Operation = "-";
+                calc.PerformOperation("-");
                 DisplayResult();
-                return;
             }
+            catch (Exception) { ShowError(); }
+            //if (calc.CurOperand == "")
+            //{
+            //    calc.Operation = "-";
+            //    DisplayResult();
+            //    return;
+            //}
 
-            if (calc.PrevOperand != "") calc.PerformCalculation();
-            string curOp = calc.CurOperand;
-            if (curOp.Contains("Error"))
-            {
-                RaiseError();
-                return;
-            }
-            calc.PrevOperand = curOp;
-            calc.CurOperand = "";
-            calc.Operation = "-";
+            //if (calc.PrevOperand != "") calc.PerformCalculation();
+            //string curOp = calc.CurOperand;
+            //if (curOp.Contains("Error"))
+            //{
+            //    RaiseError();
+            //    return;
+            //}
+            //calc.PrevOperand = curOp;
+            //calc.CurOperand = "";
+            //calc.Operation = "-";
 
-            DisplayResult();
+            //DisplayResult();
         }
 
         private void ButtonMultiply_Click(object sender, EventArgs e)
         {
-            if (calc.CurOperand == "")
+            try
             {
-                calc.Operation = "*";
+                calc.PerformOperation("*");
                 DisplayResult();
-                return;
             }
+            catch (Exception) { ShowError(); }
+            //if (calc.CurOperand == "")
+            //{
+            //    calc.Operation = "*";
+            //    DisplayResult();
+            //    return;
+            //}
 
-            if (calc.PrevOperand != "") calc.PerformCalculation();
-            string curOp = calc.CurOperand;
-            if (curOp.Contains("Error"))
-            {
-                RaiseError();
-                return;
-            }
-            calc.PrevOperand = curOp;
-            calc.CurOperand = "";
-            calc.Operation = "*";
+            //if (calc.PrevOperand != "") calc.PerformCalculation();
+            //string curOp = calc.CurOperand;
+            //if (curOp.Contains("Error"))
+            //{
+            //    RaiseError();
+            //    return;
+            //}
+            //calc.PrevOperand = curOp;
+            //calc.CurOperand = "";
+            //calc.Operation = "*";
 
-            DisplayResult();
+            //DisplayResult();
         }
 
         private void ButtonDivide_Click(object sender, EventArgs e)
         {
-            if (calc.CurOperand == "")
+            try
             {
-                calc.Operation = "/";
+                calc.PerformOperation("/");
                 DisplayResult();
-                return;
             }
+            catch (Exception) { ShowError(); }
+            //if (calc.CurOperand == "")
+            //{
+            //    calc.Operation = "/";
+            //    DisplayResult();
+            //    return;
+            //}
 
-            if (calc.PrevOperand != "") calc.PerformCalculation();
-            string curOp = calc.CurOperand;
-            if (curOp.Contains("Error"))
-            {
-                RaiseError();
-                return;
-            }
-            calc.PrevOperand = curOp;
-            calc.CurOperand = "";
-            calc.Operation = "/";
+            //if (calc.PrevOperand != "") calc.PerformCalculation();
+            //string curOp = calc.CurOperand;
+            //if (curOp.Contains("Error"))
+            //{
+            //    RaiseError();
+            //    return;
+            //}
+            //calc.PrevOperand = curOp;
+            //calc.CurOperand = "";
+            //calc.Operation = "/";
 
-            DisplayResult();
+            //DisplayResult();
         }
 
         private void ButtonEqual_Click(object sender, EventArgs e)
         {
-            if (calc.CurOperand == "")
+            //if (calc.CurOperand == "")
+            //{
+            //    string prevOp = calc.PrevOperand;
+            //    calc.Reset();
+            //    calc.CurOperand = prevOp;
+            //    DisplayResult();
+            //    return;
+            //}
+
+            //if (calc.PrevOperand != "") calc.PerformCalculation();
+            //string curOp = calc.CurOperand;
+            //if (curOp.Contains("Error"))
+            //{
+            //    RaiseError();
+            //    return;
+            //}
+            //calc.Reset();
+            //calc.CurOperand = curOp;
+            
+            try
             {
-                string prevOp = calc.PrevOperand;
-                calc.Reset();
-                calc.CurOperand = prevOp;
+                calc.FinalizeCalculation();
                 DisplayResult();
-                return;
             }
-
-            if (calc.PrevOperand != "") calc.PerformCalculation();
-            string curOp = calc.CurOperand;
-            if (curOp.Contains("Error"))
-            {
-                RaiseError();
-                return;
-            }
-            calc.Reset();
-            calc.CurOperand = curOp;
-
-            DisplayResult();
+            catch (Exception) { ShowError(); }
         }
 
     }
