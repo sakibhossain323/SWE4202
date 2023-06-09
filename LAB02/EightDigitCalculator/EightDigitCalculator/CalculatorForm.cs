@@ -13,10 +13,35 @@ namespace EightDigitCalculator
     public partial class CalculatorForm : Form
     {
         Calculator calc = new Calculator();
+        
+        public CalculatorForm()
+        {
+            InitializeComponent();
+            DisplayResult();
+        }
+
         private void DisplayResult()
         {
             LabelResult.Text = calc.CurOperand;
             LabelPrevResult.Text = calc.PrevOperand + " " + calc.Operation;
+        }
+
+        private void EnableButtons()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button button) button.Enabled = true;
+            }
+        }
+
+        private void DisableButtons()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button button) button.Enabled = false;
+            }
+
+            ButtonAC.Enabled = true;
         }
 
         private void RaiseError()
@@ -24,16 +49,13 @@ namespace EightDigitCalculator
             calc.Reset();
             calc.CurOperand = "Error: Press AC";
             DisplayResult();
-        }
-        public CalculatorForm()
-        {
-            InitializeComponent();
-            DisplayResult();
+            DisableButtons();
         }
 
         private void ButtonAC_Click(object sender, EventArgs e)
         {
             calc.Reset();
+            EnableButtons();
             DisplayResult();
         }
 
@@ -100,7 +122,7 @@ namespace EightDigitCalculator
 
         private void ButtonDecPoint_Click(object sender, EventArgs e)
         {
-            calc.AppendDigit(".");
+            calc.AppendDecPoint();
             DisplayResult();
         }
 
@@ -110,7 +132,12 @@ namespace EightDigitCalculator
             DisplayResult();
         }
 
-        
+        private void ButtonPercent_Click(object sender, EventArgs e)
+        {
+            calc.Percent();
+            DisplayResult();
+        }
+
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
             if (calc.CurOperand == "")
@@ -200,12 +227,6 @@ namespace EightDigitCalculator
             calc.CurOperand = "";
             calc.Operation = "/";
 
-            DisplayResult();
-        }
-
-        private void ButtonPercent_Click(object sender, EventArgs e)
-        {
-            calc.percent();
             DisplayResult();
         }
 
