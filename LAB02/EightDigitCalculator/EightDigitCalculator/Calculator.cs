@@ -48,9 +48,9 @@ namespace EightDigitCalculator
         public void AppendDecPoint() // Appends Decimal Point
         {
             if (CurOperand.Contains(".")) return; // Prevents multiple decimal point symbols
-            if (!IsAppendable()) return; // Prevents appending if 8 digits already exists
+            if (!IsAppendable()) return; // Prevents appending if 8 digits already exist
 
-            if (CurOperand == "") CurOperand = "0"; // Puts Leading zero before decimal point
+            if (CurOperand == "") CurOperand = "0"; // Puts a Leading zero before decimal point
             CurOperand += ".";
         }
 
@@ -79,7 +79,7 @@ namespace EightDigitCalculator
             if (double.IsNaN(result) || double.IsInfinity(result)) throw new Exception();
             
             string num = Convert.ToString(Math.Abs(result));
-            string whole = num.Split('.')[0]; // takes integer portion of the number
+            string whole = num.Split('.')[0]; // Takes integer portion of the number
             if (whole.Length > 8) throw new Exception(); // Prevents Exceeding 8 digit limit
             if (num.Contains(".")) result = Math.Round(result, 8 - whole.Length); // Rounds up floating point values to 8 digits
 
@@ -117,7 +117,7 @@ namespace EightDigitCalculator
             Operation = opreator;
         }
 
-        public void FinalizeCalculation()
+        public void FinalizeCalculation() // Calculates final result on pressing Equal button
         {
             string result;
 
