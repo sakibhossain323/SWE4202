@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace EightDigitCalculator
 {
-    public partial class CalculatorForm : Form
+    public partial class FormCalculator : Form
     {
         readonly Calculator calc = new Calculator(); // Instantiating Calculator Object
         
-        public CalculatorForm()
+        public FormCalculator()
         {
             InitializeComponent();
             DisplayResult(); // Displaying Initial state of Calculator

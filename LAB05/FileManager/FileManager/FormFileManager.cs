@@ -11,13 +11,13 @@ using System.Xml.Linq;
 
 namespace FileManager
 {
-    public partial class Form1 : Form
+    public partial class FormFileManager : Form
     {
         private readonly List <File> _files = new List <File> ();
         private readonly HashSet <string> _cacheName = new HashSet<string> ();
         private File _activeFile = null;
 
-        public Form1()
+        public FormFileManager()
         {
             InitializeComponent();
             comboBoxFtype.Items.Add("Read-Only");

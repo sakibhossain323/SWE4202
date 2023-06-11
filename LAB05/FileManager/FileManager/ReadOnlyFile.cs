@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileManager
 {
-    internal class ReadOnlyFile: FileManager.File
+    class ReadOnlyFile: File
     {
         public ReadOnlyFile(string name, string type, string content)
         {

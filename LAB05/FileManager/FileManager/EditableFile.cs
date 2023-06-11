@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileManager
 {
-    internal class EditableFile: FileManager.File
+    class EditableFile: File
     {
         public EditableFile(string name, string type, string content)
         {

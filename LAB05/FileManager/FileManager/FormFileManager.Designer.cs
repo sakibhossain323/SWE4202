@@ -1,6 +1,6 @@
 ﻿namespace FileManager
 {
-    partial class Form1
+    partial class FormFileManager
     {
         /// <summary>
         /// Required designer variable.

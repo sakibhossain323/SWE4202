@@ -1,7 +1,7 @@
 ﻿
 namespace EightDigitCalculator
 {
-    partial class CalculatorForm
+    partial class FormCalculator
     {
         /// <summary>
         /// Required designer variable.

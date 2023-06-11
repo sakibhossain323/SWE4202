@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FileManager
 {
-    internal abstract class File
+    abstract class File
     {
         protected string name, type, content;
         protected readonly List<string> features = new List<string>();
