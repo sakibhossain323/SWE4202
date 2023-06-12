@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="EditableFile.cs" />
     <Compile Include="File.cs" />
+    <Compile Include="FileSystem.cs" />
+    <Compile Include="FileSystemException.cs" />
     <Compile Include="FormFileManager.cs">
       <SubType>Form</SubType>
     </Compile>
