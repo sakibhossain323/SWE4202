@@ -1,6 +1,6 @@
-﻿namespace StoreManagementSystem
+﻿namespace InventoryManagementSystem
 {
-    partial class Form1
+    partial class FormInventory
     {
         /// <summary>
         /// Required designer variable.
@@ -31,25 +31,25 @@
             this.labelShopID = new System.Windows.Forms.Label();
             this.labelShopName = new System.Windows.Forms.Label();
             this.labelShopAddress = new System.Windows.Forms.Label();
-            this.textBoxShopId = new System.Windows.Forms.TextBox();
-            this.textBoxShopName = new System.Windows.Forms.TextBox();
-            this.textBoxShopAddress = new System.Windows.Forms.TextBox();
+            this.TextBoxShopId = new System.Windows.Forms.TextBox();
+            this.TextBoxShopName = new System.Windows.Forms.TextBox();
+            this.TextBoxShopAddress = new System.Windows.Forms.TextBox();
             this.ButtonAddShop = new System.Windows.Forms.Button();
-            this.textBoxQuantity = new System.Windows.Forms.TextBox();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.TextBoxQuantity = new System.Windows.Forms.TextBox();
+            this.TextBoxPrice = new System.Windows.Forms.TextBox();
             this.labelShopID_newProduct = new System.Windows.Forms.Label();
             this.labelQuantity = new System.Windows.Forms.Label();
             this.labelPrice = new System.Windows.Forms.Label();
-            this.textBoxProductName = new System.Windows.Forms.TextBox();
-            this.textBoxProductId = new System.Windows.Forms.TextBox();
+            this.TextBoxProductName = new System.Windows.Forms.TextBox();
+            this.TextBoxProductId = new System.Windows.Forms.TextBox();
             this.labelProductName = new System.Windows.Forms.Label();
             this.labelProductId = new System.Windows.Forms.Label();
-            this.comboBoxShopId = new System.Windows.Forms.ComboBox();
+            this.ComboBoxShopIdAdd = new System.Windows.Forms.ComboBox();
             this.ButtonAddProduct = new System.Windows.Forms.Button();
             this.labelShopIdShow = new System.Windows.Forms.Label();
-            this.comboBoxShopIdShow = new System.Windows.Forms.ComboBox();
+            this.ComboBoxShopIdView = new System.Windows.Forms.ComboBox();
             this.ButtonShowProducts = new System.Windows.Forms.Button();
-            this.listBoxProducts = new System.Windows.Forms.ListBox();
+            this.ListBoxInventory = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // labelShopID
@@ -79,26 +79,26 @@
             this.labelShopAddress.TabIndex = 2;
             this.labelShopAddress.Text = "Shop Adress:";
             // 
-            // textBoxShopId
+            // TextBoxShopId
             // 
-            this.textBoxShopId.Location = new System.Drawing.Point(87, 6);
-            this.textBoxShopId.Name = "textBoxShopId";
-            this.textBoxShopId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxShopId.TabIndex = 3;
+            this.TextBoxShopId.Location = new System.Drawing.Point(87, 6);
+            this.TextBoxShopId.Name = "TextBoxShopId";
+            this.TextBoxShopId.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxShopId.TabIndex = 3;
             // 
-            // textBoxShopName
+            // TextBoxShopName
             // 
-            this.textBoxShopName.Location = new System.Drawing.Point(87, 30);
-            this.textBoxShopName.Name = "textBoxShopName";
-            this.textBoxShopName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxShopName.TabIndex = 4;
+            this.TextBoxShopName.Location = new System.Drawing.Point(87, 30);
+            this.TextBoxShopName.Name = "TextBoxShopName";
+            this.TextBoxShopName.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxShopName.TabIndex = 4;
             // 
-            // textBoxShopAddress
+            // TextBoxShopAddress
             // 
-            this.textBoxShopAddress.Location = new System.Drawing.Point(87, 55);
-            this.textBoxShopAddress.Name = "textBoxShopAddress";
-            this.textBoxShopAddress.Size = new System.Drawing.Size(100, 20);
-            this.textBoxShopAddress.TabIndex = 5;
+            this.TextBoxShopAddress.Location = new System.Drawing.Point(87, 55);
+            this.TextBoxShopAddress.Name = "TextBoxShopAddress";
+            this.TextBoxShopAddress.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxShopAddress.TabIndex = 5;
             // 
             // ButtonAddShop
             // 
@@ -110,19 +110,19 @@
             this.ButtonAddShop.UseVisualStyleBackColor = true;
             this.ButtonAddShop.Click += new System.EventHandler(this.ButtonAddShop_Click);
             // 
-            // textBoxQuantity
+            // TextBoxQuantity
             // 
-            this.textBoxQuantity.Location = new System.Drawing.Point(87, 286);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(100, 20);
-            this.textBoxQuantity.TabIndex = 11;
+            this.TextBoxQuantity.Location = new System.Drawing.Point(87, 286);
+            this.TextBoxQuantity.Name = "TextBoxQuantity";
+            this.TextBoxQuantity.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxQuantity.TabIndex = 11;
             // 
-            // textBoxPrice
+            // TextBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(87, 262);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPrice.TabIndex = 10;
+            this.TextBoxPrice.Location = new System.Drawing.Point(87, 262);
+            this.TextBoxPrice.Name = "TextBoxPrice";
+            this.TextBoxPrice.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxPrice.TabIndex = 10;
             // 
             // labelShopID_newProduct
             // 
@@ -151,19 +151,19 @@
             this.labelPrice.TabIndex = 7;
             this.labelPrice.Text = "Price:";
             // 
-            // textBoxProductName
+            // TextBoxProductName
             // 
-            this.textBoxProductName.Location = new System.Drawing.Point(87, 236);
-            this.textBoxProductName.Name = "textBoxProductName";
-            this.textBoxProductName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxProductName.TabIndex = 18;
+            this.TextBoxProductName.Location = new System.Drawing.Point(87, 236);
+            this.TextBoxProductName.Name = "TextBoxProductName";
+            this.TextBoxProductName.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxProductName.TabIndex = 18;
             // 
-            // textBoxProductId
+            // TextBoxProductId
             // 
-            this.textBoxProductId.Location = new System.Drawing.Point(87, 211);
-            this.textBoxProductId.Name = "textBoxProductId";
-            this.textBoxProductId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxProductId.TabIndex = 17;
+            this.TextBoxProductId.Location = new System.Drawing.Point(87, 211);
+            this.TextBoxProductId.Name = "TextBoxProductId";
+            this.TextBoxProductId.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxProductId.TabIndex = 17;
             // 
             // labelProductName
             // 
@@ -183,12 +183,12 @@
             this.labelProductId.TabIndex = 14;
             this.labelProductId.Text = "Product ID:";
             // 
-            // comboBoxShopId
+            // ComboBoxShopIdAdd
             // 
-            this.comboBoxShopId.Location = new System.Drawing.Point(87, 311);
-            this.comboBoxShopId.Name = "comboBoxShopId";
-            this.comboBoxShopId.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxShopId.TabIndex = 0;
+            this.ComboBoxShopIdAdd.Location = new System.Drawing.Point(87, 311);
+            this.ComboBoxShopIdAdd.Name = "ComboBoxShopIdAdd";
+            this.ComboBoxShopIdAdd.Size = new System.Drawing.Size(100, 21);
+            this.ComboBoxShopIdAdd.TabIndex = 0;
             // 
             // ButtonAddProduct
             // 
@@ -209,12 +209,12 @@
             this.labelShopIdShow.TabIndex = 20;
             this.labelShopIdShow.Text = "Shop ID:";
             // 
-            // comboBoxShopIdShow
+            // ComboBoxShopIdView
             // 
-            this.comboBoxShopIdShow.Location = new System.Drawing.Point(441, 11);
-            this.comboBoxShopIdShow.Name = "comboBoxShopIdShow";
-            this.comboBoxShopIdShow.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxShopIdShow.TabIndex = 21;
+            this.ComboBoxShopIdView.Location = new System.Drawing.Point(441, 11);
+            this.ComboBoxShopIdView.Name = "ComboBoxShopIdView";
+            this.ComboBoxShopIdView.Size = new System.Drawing.Size(100, 21);
+            this.ComboBoxShopIdView.TabIndex = 21;
             // 
             // ButtonShowProducts
             // 
@@ -226,43 +226,43 @@
             this.ButtonShowProducts.UseVisualStyleBackColor = true;
             this.ButtonShowProducts.Click += new System.EventHandler(this.ButtonShowProducts_Click);
             // 
-            // listBoxProducts
+            // ListBoxInventory
             // 
-            this.listBoxProducts.FormattingEnabled = true;
-            this.listBoxProducts.Location = new System.Drawing.Point(389, 67);
-            this.listBoxProducts.Name = "listBoxProducts";
-            this.listBoxProducts.Size = new System.Drawing.Size(362, 303);
-            this.listBoxProducts.TabIndex = 23;
+            this.ListBoxInventory.FormattingEnabled = true;
+            this.ListBoxInventory.Location = new System.Drawing.Point(389, 67);
+            this.ListBoxInventory.Name = "ListBoxInventory";
+            this.ListBoxInventory.Size = new System.Drawing.Size(362, 303);
+            this.ListBoxInventory.TabIndex = 23;
             // 
-            // Form1
+            // FormInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBoxProducts);
+            this.Controls.Add(this.ListBoxInventory);
             this.Controls.Add(this.ButtonShowProducts);
-            this.Controls.Add(this.comboBoxShopIdShow);
+            this.Controls.Add(this.ComboBoxShopIdView);
             this.Controls.Add(this.labelShopIdShow);
             this.Controls.Add(this.ButtonAddProduct);
-            this.Controls.Add(this.comboBoxShopId);
-            this.Controls.Add(this.textBoxProductName);
-            this.Controls.Add(this.textBoxProductId);
+            this.Controls.Add(this.ComboBoxShopIdAdd);
+            this.Controls.Add(this.TextBoxProductName);
+            this.Controls.Add(this.TextBoxProductId);
             this.Controls.Add(this.labelProductName);
             this.Controls.Add(this.labelProductId);
-            this.Controls.Add(this.textBoxQuantity);
-            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.TextBoxQuantity);
+            this.Controls.Add(this.TextBoxPrice);
             this.Controls.Add(this.labelShopID_newProduct);
             this.Controls.Add(this.labelQuantity);
             this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.ButtonAddShop);
-            this.Controls.Add(this.textBoxShopAddress);
-            this.Controls.Add(this.textBoxShopName);
-            this.Controls.Add(this.textBoxShopId);
+            this.Controls.Add(this.TextBoxShopAddress);
+            this.Controls.Add(this.TextBoxShopName);
+            this.Controls.Add(this.TextBoxShopId);
             this.Controls.Add(this.labelShopAddress);
             this.Controls.Add(this.labelShopName);
             this.Controls.Add(this.labelShopID);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormInventory";
+            this.Text = "Inventory";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,25 +273,25 @@
         private System.Windows.Forms.Label labelShopID;
         private System.Windows.Forms.Label labelShopName;
         private System.Windows.Forms.Label labelShopAddress;
-        private System.Windows.Forms.TextBox textBoxShopId;
-        private System.Windows.Forms.TextBox textBoxShopName;
-        private System.Windows.Forms.TextBox textBoxShopAddress;
+        private System.Windows.Forms.TextBox TextBoxShopId;
+        private System.Windows.Forms.TextBox TextBoxShopName;
+        private System.Windows.Forms.TextBox TextBoxShopAddress;
         private System.Windows.Forms.Button ButtonAddShop;
-        private System.Windows.Forms.TextBox textBoxQuantity;
-        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.TextBox TextBoxQuantity;
+        private System.Windows.Forms.TextBox TextBoxPrice;
         private System.Windows.Forms.Label labelShopID_newProduct;
         private System.Windows.Forms.Label labelQuantity;
         private System.Windows.Forms.Label labelPrice;
-        private System.Windows.Forms.TextBox textBoxProductName;
-        private System.Windows.Forms.TextBox textBoxProductId;
+        private System.Windows.Forms.TextBox TextBoxProductName;
+        private System.Windows.Forms.TextBox TextBoxProductId;
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Label labelProductId;
-        private System.Windows.Forms.ComboBox comboBoxShopId;
+        private System.Windows.Forms.ComboBox ComboBoxShopIdAdd;
         private System.Windows.Forms.Button ButtonAddProduct;
         private System.Windows.Forms.Label labelShopIdShow;
-        private System.Windows.Forms.ComboBox comboBoxShopIdShow;
+        private System.Windows.Forms.ComboBox ComboBoxShopIdView;
         private System.Windows.Forms.Button ButtonShowProducts;
-        private System.Windows.Forms.ListBox listBoxProducts;
+        private System.Windows.Forms.ListBox ListBoxInventory;
     }
 }
 
