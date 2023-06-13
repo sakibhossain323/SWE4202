@@ -9,7 +9,7 @@ namespace FileManager
     class FileSystem
     {
         public List<File> Files { get; private set; } = new List<File>();
-        public File ActiveFile { get; private set; }
+        public File SelectedFile { get; private set; }
 
         public FileSystem()
         {
@@ -52,15 +52,15 @@ namespace FileManager
         {
             File file = FindFile(name);
             if (file.Type == "Read-Only") throw new ReadOnlyFileException(name);
-            ActiveFile = file;
+            SelectedFile = file;
         }
 
         public void SaveContent(string newContent)
         {
-            if (ActiveFile == null) throw new FileNotSelectedException();
-            EditableFile file = (EditableFile)ActiveFile;
+            if (SelectedFile == null) throw new FileNotSelectedException();
+            EditableFile file = (EditableFile)SelectedFile;
             file.SetContent(newContent);
-            ActiveFile = null;
+            SelectedFile = null;
         }
     }
 }

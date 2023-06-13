@@ -9,20 +9,14 @@ namespace FileManager
 {
     abstract class File
     {
-        protected string name, type, content;
-        protected readonly List<string> features = new List<string>();
-
-        public List<string> Features { get { return features; } }
-
-        
-        public string Name { get { return name; } }
-        public string Type { get { return type; } }
-        public string Content { get { return content; } }
-        
-
-        public double GetFileSize()
+        public string Name { get; protected set; }
+        public string Type { get; protected set; }
+        public string Content { get; protected set; }
+        public List<string> Features { get; protected set; } = new List<string>();
+       
+        public double FileSize 
         {
-            return (2*this.content.Length)/1024.0;
+            get { return (2 * Content.Length) / 1024.0; }
         }
 
     }

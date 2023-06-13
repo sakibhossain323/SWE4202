@@ -10,12 +10,12 @@ namespace FileManager
     {
         public ReadOnlyFile(string name, string type, string content)
         {
-            this.name = name;
-            this.type = type;
-            this.content = content;
-            this.features.Add("Share");
-            this.features.Add("Print");
-            this.features.Add("Archive");
+            Name = name;
+            Type = type;
+            Content = content;
+            Features.Add("Share");
+            Features.Add("Print");
+            Features.Add("Archive");
         }
 
     }

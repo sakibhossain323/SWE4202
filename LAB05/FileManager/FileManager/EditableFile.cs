@@ -10,18 +10,15 @@ namespace FileManager
     {
         public EditableFile(string name, string type, string content)
         {
-            this.name = name;
-            this.type = type;
-            this.content = content;
-            this.features.Add("Share");
-            this.features.Add("Update");
-            this.features.Add("Compress");
-            this.features.Add("Translate");
+            Name = name;
+            Type = type;
+            Content = content;
+            Features.Add("Share");
+            Features.Add("Update");
+            Features.Add("Compress");
+            Features.Add("Translate");
         }
 
-        public void SetContent(string content)
-        {
-            this.content = content;
-        }
+        public void SetContent(string newContent) { Content = newContent; }
     }
 }

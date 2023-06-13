@@ -323,7 +323,7 @@
             this.listBoxFiles.Size = new System.Drawing.Size(310, 108);
             this.listBoxFiles.TabIndex = 30;
             // 
-            // Form1
+            // FormFileManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -359,8 +359,8 @@
             this.Controls.Add(this.labelAddFcont);
             this.Controls.Add(this.labelAddFtype);
             this.Controls.Add(this.labelAddFname);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormFileManager";
+            this.Text = "File Manager";
             this.ResumeLayout(false);
             this.PerformLayout();
 

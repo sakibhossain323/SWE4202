@@ -51,10 +51,9 @@ namespace FileManager
             {
                 string name = textBoxUpFname.Text;
                 filesys.UpdateFile(name);
-                textBoxUpContent.Text = filesys.ActiveFile.Content;
+                textBoxUpContent.Text = filesys.SelectedFile.Content;
             }
             catch (Exception exc) { MessageBox.Show(exc.Message); }
-            
         }
 
         private void ButtonSave_Click(object sender, EventArgs e)
@@ -89,13 +88,14 @@ namespace FileManager
             listBoxFiles.Items.Add("Name\tType\tSize(KB)");
             
             double mem = 0;
-            var files = filesys.Files;
+            List<File> files = filesys.Files;
 
-            foreach(File file in filesys.Files)
+            foreach(File file in files)
             {
-                double curfilesize = file.GetFileSize();
-                listBoxFiles.Items.Add($"{file.Name}\t{file.Type}\t{curfilesize}");
-                mem += curfilesize;
+                double size = file.FileSize;
+                mem += size;
+
+                listBoxFiles.Items.Add($"{file.Name}\t{file.Type}\t{size}");
             }
 
             textBoxTotal.Text = files.Count.ToString();
