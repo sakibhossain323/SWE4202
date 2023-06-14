@@ -19,11 +19,11 @@ namespace HospitalManagementSystem
 
         public Employee(string name, string address, string phoneNum, string email, DateTime hireDate)
         {
-            this.Name = name;
-            this.Address = address;
-            this.PhoneNum = phoneNum;
-            this.Email = email;
-            this.HireDate = hireDate;
+            Name = name;
+            Address = address;
+            PhoneNum = phoneNum;
+            Email = email;
+            HireDate = hireDate;
         }
 
         public void ShowDetails()
@@ -31,6 +31,10 @@ namespace HospitalManagementSystem
             Console.WriteLine($"EmployeeDetails");
         }
 
-        public int CalculateYearsOfService() { return DateTime.Now.Year - this.HireDate.Year; }
+        public int CalculateYearsOfService()
+        { 
+            TimeSpan duration = DateTime.Now - HireDate;
+            return (int)duration.TotalDays / 365;
+        }
     }
 }

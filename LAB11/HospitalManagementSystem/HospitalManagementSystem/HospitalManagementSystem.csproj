@@ -49,7 +49,7 @@
     <Compile Include="Nurse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stuff_of_Management.cs" />
+    <Compile Include="ManagementStuff.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

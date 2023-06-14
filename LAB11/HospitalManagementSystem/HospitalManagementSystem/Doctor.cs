@@ -8,10 +8,13 @@ namespace HospitalManagementSystem
 {
     public class Doctor: Employee
     {
+        public List<string> Degrees { get; set; } = new List<string>();
+        public List<Doctor> Colleagues { get; set; } = new List<Doctor>();
+
         public Doctor(string name, string address, string phoneNum, string email, DateTime hireDate, string dept, string pos): base(name, address, phoneNum, email, hireDate)
         {
-            this.Department= dept;
-            this.Position= pos;
+            Department= dept;
+            Position= pos;
         }
     }
 }
