@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem
 {
-    internal class DVD: Item
+    class DVD: Item
     {
         public string Director { get; set; }
         public int Length { get; set; }
 
         public DVD(string id, string title, string author, string category, string director, int length): base(id, title, author, category)
         {
-            this.Director = director;
-            this.Length = length;
+            Director = director;
+            Length = length;
         }
     }
 }

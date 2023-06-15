@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileManager
 {
-    class FileSystemException: Exception
+    class FileSystemException : Exception
     {
         public FileSystemException(string msg): base(msg)
         {
@@ -14,7 +14,7 @@ namespace FileManager
         }
     }
 
-    class FileNotFoundException: FileSystemException
+    class FileNotFoundException : FileSystemException
     {
         public FileNotFoundException(string name): base($"\"{name}\" doesn't exist!")
         {
@@ -22,7 +22,7 @@ namespace FileManager
         }
     }
 
-    class FileAlreadyExistsException: FileSystemException
+    class FileAlreadyExistsException : FileSystemException
     {
         public FileAlreadyExistsException(string name): base($"\"{name}\" already exists!")
         {
@@ -30,7 +30,7 @@ namespace FileManager
         }
     }
 
-    class ReadOnlyFileException: FileSystemException
+    class ReadOnlyFileException : FileSystemException
     {
         public ReadOnlyFileException(string name): base($"\"{name}\" is a Read-Only file!")
         {
@@ -38,7 +38,7 @@ namespace FileManager
         }
     }
 
-    class FileNotSelectedException: FileSystemException
+    class FileNotSelectedException : FileSystemException
     {
         public FileNotSelectedException(): base("No file was selected!")
         {

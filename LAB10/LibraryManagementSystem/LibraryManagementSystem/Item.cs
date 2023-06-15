@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem
 {
-    internal  abstract class Item
+    abstract class Item
     {
         public string ID { get; set; }
         public string Title { get; set; }
@@ -16,20 +16,20 @@ namespace LibraryManagementSystem
 
         public Item(string id, string title, string author, string category)
         {
-            this.ID = id;
-            this.Title = title;
-            this.Author = author;
-            this.Category = category;
-            this.IsAvailable = true;
+            ID = id;
+            Title = title;
+            Author = author;
+            Category = category;
+            IsAvailable = true;
         }
 
         public void DisplayDetails()
         {
-            Console.WriteLine($"ID: {this.ID}, Title: {this.Title}, Author: {this.Author}, Category {this.Category}, Available: {this.IsAvailable}");
+            Console.WriteLine($"ID: {ID}, Title: {Title}, Author: {Author}, Category {Category}, Available: {IsAvailable}");
         }
 
-        public void BorrowItem() { this.IsAvailable = false;}
-        public void ReturnItem() { this.IsAvailable = true;} 
+        public void BorrowItem() { IsAvailable = false;}
+        public void ReturnItem() { IsAvailable = true;} 
 
     }
 }

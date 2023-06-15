@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystem
 {
-    public class Doctor: Employee
+    public class Doctor : Employee
     {
         public List<string> Degrees { get; set; } = new List<string>();
         public List<Doctor> Colleagues { get; set; } = new List<Doctor>();

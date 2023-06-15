@@ -6,9 +6,35 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem
 {
-    internal class LibraryException: Exception
+    class LibraryException: Exception
     {
-        public LibraryException() { }
-        public LibraryException(string message) : base(message) { }
+        public LibraryException(string message) : base(message) 
+        {
+
+        }
+    }
+
+    class ItemNotFoundException : LibraryException
+    {
+        public ItemNotFoundException(string id): base($"{id} is not found")
+        {
+
+        }
+    }
+
+    class ItemNotAvailableException : LibraryException
+    {
+        public ItemNotAvailableException(string id) : base($"{id} is not available to borrow")
+        {
+
+        }
+    }
+
+    class ItemNotBorrowedException : LibraryException
+    {
+        public ItemNotBorrowedException(string id) : base($"{id} is not borrowed yet.")
+        {
+
+        }
     }
 }
