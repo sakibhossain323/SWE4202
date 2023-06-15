@@ -22,19 +22,17 @@ namespace AuthenticationSystem
             try
             {
                 string uname = TextBoxUserName.Text, pass = TextBoxPass.Text;
-                User u = AuthHandler.Login(uname, pass);
-                var dashboard = new DashboardForm(u);
-                dashboard.Show();
-                this.Hide();
+                Authenticator.Login(uname, pass);
+                Hide();
+                new DashboardForm().Show();
             }
             catch (Exception exc) { MessageBox.Show(exc.Message); }
         }
 
         private void LinkLabelSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var signUpPanel = new SignUpForm();
-            signUpPanel.Show();
-            this.Hide();
+            Hide();
+            new SignUpForm().Show();
         }
     }
 }

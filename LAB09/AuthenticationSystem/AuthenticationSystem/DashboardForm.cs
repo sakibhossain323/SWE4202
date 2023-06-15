@@ -15,21 +15,16 @@ namespace AuthenticationSystem
         public DashboardForm()
         {
             InitializeComponent();
-        }
-
-        public DashboardForm(User user)
-        {
-            InitializeComponent();
-
-            string greeting = this.LabelGreetUser.Text;
-            this.LabelGreetUser.Text = greeting.Replace("UserName", user.UserName);
+            string greeting = LabelGreetUser.Text;
+            LabelGreetUser.Text = greeting.Replace("UserName", Authenticator.CurrentUser.UserName);
         }
 
         private void ButtonLogOut_Click(object sender, EventArgs e)
         {
-            var loginPanel = new LoginForm();
-            loginPanel.Show();
-            this.Hide();
+            Authenticator.Logout();
+            Hide();
+            new LoginForm().Show();
+            
         }
     }
 }

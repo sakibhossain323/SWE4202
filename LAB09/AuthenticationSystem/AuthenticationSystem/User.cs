@@ -14,9 +14,9 @@ namespace AuthenticationSystem
 
         public User(string userName, string password, string name)
         {
-            this.UserName = userName;
-            this.Password = password;
-            this.Name = name;
+            UserName = userName;
+            Password = password;
+            Name = name;
         }
     }
 }

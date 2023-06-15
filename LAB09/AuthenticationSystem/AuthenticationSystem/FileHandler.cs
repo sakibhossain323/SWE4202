@@ -10,17 +10,17 @@ namespace AuthenticationSystem
     internal static class FileHandler
     {
         
-        public static readonly string _curDir = System.IO.Directory.GetCurrentDirectory();
-        public static readonly string Path = _curDir + "\\Records.txt";
+        public static readonly string _curDir = Directory.GetCurrentDirectory();
+        public static readonly string _path = _curDir + "\\Records.txt";
 
         
 
-        public static string[] ReadFile()
+        private static string[] ReadFile()
         {
-            try { return File.ReadAllLines(FileHandler.Path); }
+            try { return File.ReadAllLines(_path); }
             catch (FileNotFoundException)
             {
-                File.CreateText(FileHandler.Path).Close();
+                File.CreateText(_path).Close();
                 return new string[0];
             }
             catch (Exception exc) { throw exc; }
@@ -28,7 +28,7 @@ namespace AuthenticationSystem
 
         public static List<User> GetUserData()
         {
-            string[] lines = FileHandler.ReadFile();
+            string[] lines = ReadFile();
             var users = new List<User>();
             foreach (string line in lines)
             {
@@ -42,7 +42,7 @@ namespace AuthenticationSystem
 
         public static void WriteToFile(string data)
         {
-            File.AppendAllText(FileHandler.Path, data);
+            File.AppendAllText(_path, data);
         }
     }
 }

@@ -26,19 +26,17 @@ namespace AuthenticationSystem
 
             try
             {
-                AuthHandler.SignUp(name, uname, pass, repass);
-                var loginPanel = new LoginForm();
-                loginPanel.Show();
-                this.Hide();
+                Authenticator.SignUp(name, uname, pass, repass);
+                Hide();
+                new LoginForm().Show();
             }
             catch (Exception exc) { MessageBox.Show(exc.Message); }
         }
 
         private void LinkLabelLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var loginPanel = new LoginForm();
-            loginPanel.Show();
-            this.Hide();
+            Hide();
+            new LoginForm().Show();
         }
     }
 }
