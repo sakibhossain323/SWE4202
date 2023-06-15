@@ -18,7 +18,7 @@ namespace StoreManagementSystem
 
         public Product FindProduct(int id)
         {
-            foreach(Product p in this.Inventory)
+            foreach(Product p in Inventory)
             {
                 if(p.Id == id) return p;
             }
@@ -41,7 +41,7 @@ namespace StoreManagementSystem
         public void ShowStoreDetails()
         {
             Console.WriteLine("----Inventory Details----");
-            foreach (Product p in this.Inventory) p.ShowProductInfo();
+            foreach (Product p in Inventory) p.ShowProductInfo();
         }
     }
 }

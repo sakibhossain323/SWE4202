@@ -11,18 +11,18 @@ namespace StoreManagementSystem
         public double Bonus { get; set; }
         public double TotalSalary
         {
-            get { return this.BaseSalary+this.Bonus; } 
+            get { return BaseSalary+Bonus; } 
         }
 
         public SalesAssociate(string name, int age, double baseSalary): base(name, age, baseSalary)
         {
             Console.WriteLine("----Sales Associate has been added!----");
-            this.ShowEmployeeInfo();
+            ShowEmployeeInfo();
         }
 
         public override void ShowEmployeeInfo()
         {
-            Console.WriteLine($"Name: {this.Name} -- Age: {this.Age} -- BaseSalary: BDT {this.BaseSalary} -- Bonus: {this.Bonus} -- Total Salary: {this.TotalSalary}");
+            Console.WriteLine($"Name: {Name} -- Age: {Age} -- BaseSalary: BDT {BaseSalary} -- Bonus: {Bonus} -- Total Salary: {TotalSalary}");
         }
 
         public void SellProduct(int id, int amt, Store store)
@@ -35,9 +35,9 @@ namespace StoreManagementSystem
             if(temp != p.Curlevel)
             {
                 double curBonus = (p.Price*amt) * 0.01;
-                this.Bonus += curBonus;
+                Bonus += curBonus;
 
-                Console.WriteLine($"{p.Name} has been sold and {this.Name} has received a bonus of {curBonus}!");
+                Console.WriteLine($"{p.Name} has been sold and {Name} has received a bonus of {curBonus}!");
             }
         }
     }

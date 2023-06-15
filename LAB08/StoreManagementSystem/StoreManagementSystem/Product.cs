@@ -21,25 +21,25 @@ namespace StoreManagementSystem
             get { return curLevel; }
             set
             {
-                if (value >= 0) this.curLevel = value;
-                else Console.WriteLine($"Not enough amount of {this.Name}. Contact your Manager!");
+                if (value >= 0) curLevel = value;
+                else Console.WriteLine($"Not enough amount of {Name}. Contact your Manager!");
             }
         }
 
         public Product(int id, string name, double price, int curlev, int minlev, int reqAmt)
         {
-            this.Id = id;
-            this.Name= name;
-            this.Price= price;
-            this.Curlevel= curlev;
-            this.MinLevel= minlev;
-            this.ReqAmount= reqAmt;
+            Id = id;
+            Name= name;
+            Price= price;
+            Curlevel= curlev;
+            MinLevel= minlev;
+            ReqAmount= reqAmt;
             
         }
 
         public void ShowProductInfo()
         {
-            Console.WriteLine($"ID : {this.Id} -- Product Name: {this.Name} -- Price: BDT {this.Price} -- Qty: {this.Curlevel} -- Min.Qty {this.MinLevel} -- Req.Amt: {this.ReqAmount}");
+            Console.WriteLine($"ID : {Id} -- Product Name: {Name} -- Price: BDT {Price} -- Qty: {Curlevel} -- Min.Qty {MinLevel} -- Req.Amt: {ReqAmount}");
         }
 
     }

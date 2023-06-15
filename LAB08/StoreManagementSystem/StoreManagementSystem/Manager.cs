@@ -11,12 +11,12 @@ namespace StoreManagementSystem
         public Manager(string name, int age, double baseSalary): base(name, age, baseSalary)
         {
             Console.WriteLine("----Manager has been added!----");
-            this.ShowEmployeeInfo();
+            ShowEmployeeInfo();
         }
 
         public override void ShowEmployeeInfo()
         {
-            Console.WriteLine($"Name: {this.Name} -- Age: {this.Age} -- BaseSalary: BDT {this.BaseSalary}");
+            Console.WriteLine($"Name: {Name} -- Age: {Age} -- BaseSalary: BDT {BaseSalary}");
         }
 
         public void AddProduct(int id, string name, double price, int curLev, int minLev, int reqAmt, Store store)
