@@ -1,2 +1,2 @@
 # File Manager
-- Requirements: [LAB05A](./LAB05/Lab05A.pdf)
+- Requirements: [LAB05A](./Lab05A.pdf)
